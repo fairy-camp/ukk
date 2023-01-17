@@ -33,17 +33,17 @@
         <div class="row">
             <h2 class="mb-5 mt-5 text-center">Codepelita-Store</h2>
             <div class="col-md-7">
-                <form action="">
+                <form method="POST" action="hasil.php">
                     <div class="row">
                         <div class="col-md-3 mb-4">
                             <label for="">Nama Barang</label>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" id="nama_barang" aria-label="Default select example">
-                                <option selected disabled>-- Pilih Barang --</option>
+                            <select class="form-select" id="nama_barang" required>
+                                <option selected disabled value="">-- Pilih Barang --</option>
                                 <?php foreach( $barang as $brg ) : ?>
 
-                                <option value="1"><?= $brg["nama_barang"] ?></option>
+                                <option value="<?= $brg["nama_barang"] ?>"><?= $brg["nama_barang"] ?></option>
 
                                 <?php endforeach; ?>        
                             </select>
@@ -59,6 +59,9 @@
                         </div>
                         <div class="col-md-9">
                             <input class="form-control" type="number" placeholder="Masukan Quantity Barang">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" value="Hitung" class="btn btn-primary">
                         </div>
                     </div>
                 </form>
