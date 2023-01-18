@@ -39,7 +39,7 @@
                             <label for="">Nama Barang</label>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-select" id="nama_barang" required>
+                            <select class="form-select" id="nama_barang" name="nama_brg" required>
                                 <option selected disabled value="">-- Pilih Barang --</option>
                                 <?php foreach( $barang as $brg ) : ?>
 
@@ -52,16 +52,16 @@
                             <label for="">Harga Barang</label>
                         </div>
                         <div class="col-md-9">
-                            <input class="form-control" type="text" placeholder="Masukan Harga Barang">
+                            <input class="form-control" name="harga_brg" type="text" placeholder="Masukan Harga Barang">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="">Quantity Barang</label>
                         </div>
                         <div class="col-md-9">
-                            <input class="form-control" type="number" placeholder="Masukan Quantity Barang">
+                            <input class="form-control" name="qty_brg" type="number" placeholder="Masukan Quantity Barang">
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" value="Hitung" class="btn btn-primary">
+                            <input type="submit" value="Hitung" name="hitung" class="btn btn-primary">
                         </div>
                     </div>
                 </form>
