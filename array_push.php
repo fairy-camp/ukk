@@ -1,19 +1,22 @@
 <?php 
     $barang = ["Buku","Pensil","Penghapus","Penggaris"];
+    $total = [85000, 70000, 55000];
 
-    if (isset($_POST['insertProduct'])) {
-        $brg_baru = $_POST['nama'];
-        // $barang = ["Buku","Pensil","Penghapus","Penggaris"];
-        if (isset($_SESSION['myArray'])) {
-            $barang = $_SESSION['myArray'];
-            array_push($barang, "$brg_baru");
-            $_SESSION['myArray'] = $barang;
-        } else {
-            array_push($barang, "$brg_baru");
-            $_SESSION['myArray'] = $barang;
-        }
-    }
+    // if (isset($_POST['insertProduct'])) {
+    //     $brg_baru = $_POST['nama'];
+    //     // $barang = ["Buku","Pensil","Penghapus","Penggaris"];
+    //     if (isset($_SESSION['myArray'])) {
+    //         // $barang = $_SESSION['myArray'];
+    //         array_push($barang, "$brg_baru");
+    //         $_SESSION['myArray'] = $barang;
+    //     } else {
+    //         array_push($barang, "$brg_baru");
+    //         $_SESSION['myArray'] = $barang;
+    //     }
+    // }
     // echo print_r($inserted_products);
+
+    
 
 ?>
 
@@ -28,17 +31,24 @@
 </head>
 <body>
 
+<div class="container">
+    
     <h2>Data Barang</h2>
-    <ul>
-        <?php foreach($barang as $brg) : ?>
-            <li><?= $brg ?></li>    
-
-        <?php endforeach ?>
-    </ul>    
+    
     <form action="" method="POST">
-        <input type="text" name="nama">
+        <select name="" id="" class="mb-3">
+            <option value="">-- Pilih --</option>
+            <?php foreach($barang as $brg) : ?>
+                <option value="<?= $brg ?>"><?= $brg ?></option>
+            <?php endforeach ?>
+        </select> <br>
+        <input type="text" class="mb-3" name="harga" placeholder="Harga Barang"> <br>    
+        <input type="text" class="mb-3" name="qty" placeholder="Qty Barang"> <br>    
         <input type="submit" name="insertProduct">
     </form>
+    
+</div>
+
 
 
 
